@@ -116,6 +116,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="print_board.cpp" />
+    <ClCompile Include="print_header.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="print_board.h" />
+    <ClInclude Include="print_header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
