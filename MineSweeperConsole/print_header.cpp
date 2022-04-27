@@ -9,5 +9,6 @@ namespace Minesweeper {
 		std::cout << "*********************" << std::endl;
 		std::cout << "*****MINESWEEPER*****" << std::endl;
 		std::cout << "*********************" << std::endl;
+		std::cout << std::endl;
 	}
 }
