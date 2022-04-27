@@ -5,20 +5,31 @@
  */
 
 #include <iostream>
+#include <stdlib.h>
+#include <vector>
 
 #include "print_header.h"
 #include "print_board.h"
+#include "create_board.h"
+#include "guess.h"
 
-static int size = 26;
+static int size = 10;
 static std::array<char, 26> letters = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+static std::vector<std::vector<bool>> board;
+static std::vector<std::vector<char>> guesses(size, std::vector<char>(size, '-'));
 
 int main() {
 	using namespace Minesweeper;
 
-	print_header();
+	board = create_board(&size);
 
-	print_board(&size, &letters);
+	while (true) {
+		print_header();
 
-	char c;
-	std::cin >> c;
+		print_board(&size, &letters, &board, &guesses);
+
+		guess(&letters, &board, &guesses);
+
+		system("CLS");
+	}
 }

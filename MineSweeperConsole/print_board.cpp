@@ -5,7 +5,7 @@
 #include "print_board.h"
 
 namespace Minesweeper {
-	void print_board(const int* size, const std::array<char, 26>* letters) {
+	void print_board(const int* size, const std::array<char, 26>* letters, const std::vector<std::vector<bool>>* board, const std::vector<std::vector<char>>* guesses) {
 		// lines loop
 		for (int i = -1; i < *size; i++) {
 			// columns loop
@@ -29,10 +29,17 @@ namespace Minesweeper {
 				}
 
 				// print fields
-				std::cout << " ?";
+				if ((*guesses)[i][j] != '-') {
+					std::cout << " " << (*guesses)[i][j];
+				}
+				else {
+					std::cout << " ?";
+				}
 			}
 
 			std::cout << std::endl;
 		}
+
+		std::cout << std::endl;
 	}
 }
