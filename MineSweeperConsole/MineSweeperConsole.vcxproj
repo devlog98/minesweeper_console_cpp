@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="check_guess.cpp" />
     <ClCompile Include="create_board.cpp" />
     <ClCompile Include="guess.cpp" />
     <ClCompile Include="main.cpp" />
@@ -122,6 +123,7 @@
     <ClCompile Include="print_header.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="check_guess.h" />
     <ClInclude Include="create_board.h" />
     <ClInclude Include="guess.h" />
     <ClInclude Include="print_board.h" />
