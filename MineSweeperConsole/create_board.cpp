@@ -5,21 +5,21 @@
 #include "create_board.h"
 
 namespace Minesweeper {
-	std::vector<std::vector<bool>> create_board(const int* size) {
+	std::vector<std::vector<bool>> create_board(const int* size, const int* bombs) {
 		std::vector<std::vector<bool>> board (*size, std::vector<bool>(*size, false));
 
-		int bombs = 10;
+		int totalBombs = (*bombs);
 		int line;
 		int column;
 
 		srand(time(NULL));
-		while (bombs > 0) {
+		while (totalBombs > 0) {
 			line = rand() % *size;
 			column = rand() % *size;
 
 			if (!board[line][column]) {
 				board[line][column] = true;
-				bombs--;
+				totalBombs--;
 			}
 		}
 

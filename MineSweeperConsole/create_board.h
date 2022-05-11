@@ -8,5 +8,5 @@
 #include <ctime>
 
 namespace Minesweeper {
-	std::vector<std::vector<bool>> create_board(const int* size);
+	std::vector<std::vector<bool>> create_board(const int* size, const int* bombs);
 }
