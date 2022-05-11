@@ -21,6 +21,11 @@ namespace Minesweeper {
 						continue;
 					}
 
+					// skip self
+					if (i == (*lineIndex) && j == (*columnIndex)) {
+						continue;
+					}
+
 					if ((*board)[i][j]) {
 						bombs++;
 					}
@@ -32,6 +37,26 @@ namespace Minesweeper {
 			}
 			else {
 				(*guesses)[(*lineIndex)][(*columnIndex)] = ' ';
+				for (int i = (*lineIndex) - 1; i <= (*lineIndex) + 1; i++) {
+					if (i < 0 || i >= (*board).size()) {
+						continue;
+					}
+
+					for (int j = (*columnIndex) - 1; j <= (*columnIndex) + 1; j++) {
+						if (j < 0 || j >= (*board)[i].size()) {
+							continue;
+						}
+
+						// skip self
+						if (i == (*lineIndex) && j == (*columnIndex)) {
+							continue;
+						}
+
+						if ((*guesses)[i][j] == '?') {
+							check_guess(&i, &j, &(*board), &(*guesses));
+						}
+					}
+				}
 			}
 		}
 		else {

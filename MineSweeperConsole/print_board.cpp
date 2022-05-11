@@ -29,12 +29,7 @@ namespace Minesweeper {
 				}
 
 				// print fields
-				if ((*guesses)[i][j] != '-') {
-					std::cout << " " << (*guesses)[i][j];
-				}
-				else {
-					std::cout << " ?";
-				}
+				std::cout << " " << (*guesses)[i][j];
 			}
 
 			std::cout << std::endl;
