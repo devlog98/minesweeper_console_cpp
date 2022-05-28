@@ -7,7 +7,7 @@
 namespace Minesweeper {
 	std::tuple<int, int> guess(const int* size, const std::array<char, 26>* letters) {
 		// input
-		std::cout << "Put your guess, first line then column: ";
+		std::cout << "Put your guess! First line then column (example - AB): ";
 		std::string guess;
 		std::cin >> guess;
 
