@@ -35,7 +35,7 @@ int main() {
 
 		// board size
 		size = 0;
-		while (size <= 0 || size > 26) {
+		while (size <= 2 || size > 26) {
 			size = choose_board_size();
 		}
 

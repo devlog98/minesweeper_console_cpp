@@ -10,7 +10,7 @@ namespace Minesweeper {
 		std::string size;
 		int maxLength = 2;
 
-		std::cout << "Select the size of the squared board (1 to 26): ";
+		std::cout << "Select the size of the squared board (3 to 26): ";
 		std::cin >> size;
 		std::cout << std::endl;
 
