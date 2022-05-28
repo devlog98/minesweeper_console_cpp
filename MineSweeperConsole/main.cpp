@@ -5,6 +5,8 @@
  */
 
 #include <iostream>
+#include <thread>
+#include <chrono>
 #include <stdlib.h>
 #include <vector>
 
@@ -14,8 +16,9 @@
 #include "choose_board_difficulty.h"
 #include "create_board.h"
 #include "guess.h"
-#include "print_header.h"
 #include "print_board.h"
+#include "print_developer.h"
+#include "print_header.h"
 #include "print_results.h"
 
 static int size;
@@ -29,6 +32,10 @@ int main() {
 
 	bool retry = true;
 	while (retry) {
+		// initial logo
+		print_developer();
+		std::this_thread::sleep_for(std::chrono::seconds(3));
+
 		// game setup
 		system("CLS");
 		print_header();

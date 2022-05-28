@@ -125,6 +125,7 @@
     <ClCompile Include="guess.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="print_board.cpp" />
+    <ClCompile Include="print_developer.cpp" />
     <ClCompile Include="print_header.cpp" />
     <ClCompile Include="print_results.cpp" />
   </ItemGroup>
@@ -137,6 +138,7 @@
     <ClInclude Include="create_board.h" />
     <ClInclude Include="guess.h" />
     <ClInclude Include="print_board.h" />
+    <ClInclude Include="print_developer.h" />
     <ClInclude Include="print_header.h" />
     <ClInclude Include="print_results.h" />
   </ItemGroup>
