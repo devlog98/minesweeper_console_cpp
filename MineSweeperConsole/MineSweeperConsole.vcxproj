@@ -118,6 +118,7 @@
   <ItemGroup>
     <ClCompile Include="check_guess.cpp" />
     <ClCompile Include="check_has_won.cpp" />
+    <ClCompile Include="check_integer_input.cpp" />
     <ClCompile Include="choose_board_difficulty.cpp" />
     <ClCompile Include="choose_board_size.cpp" />
     <ClCompile Include="create_board.cpp" />
@@ -130,6 +131,7 @@
   <ItemGroup>
     <ClInclude Include="check_guess.h" />
     <ClInclude Include="check_has_won.h" />
+    <ClInclude Include="check_integer_input.h" />
     <ClInclude Include="choose_board_difficulty.h" />
     <ClInclude Include="choose_board_size.h" />
     <ClInclude Include="create_board.h" />

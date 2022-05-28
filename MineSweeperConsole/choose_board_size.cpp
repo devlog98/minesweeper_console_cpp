@@ -3,15 +3,18 @@
  */
 
 #include "choose_board_size.h"
+#include "check_integer_input.h"
 
 namespace Minesweeper {
 	int choose_board_size() {
-		int size;
+		std::string size;
+		int maxLength = 2;
 
 		std::cout << "Select the size of the squared board (1 to 26): ";
 		std::cin >> size;
 		std::cout << std::endl;
 
-		return size;
+		// check if input is a valid number		
+		return check_integer_input(&size, &maxLength);
 	}
 }

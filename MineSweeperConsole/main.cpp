@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <vector>
 
+#include "check_guess.h"
 #include "check_has_won.h"
 #include "choose_board_size.h"
 #include "choose_board_difficulty.h"
@@ -31,20 +32,38 @@ int main() {
 		// game setup
 		system("CLS");
 		print_header();
-		size = choose_board_size();
-		bombs = choose_board_difficulty(&size);
+
+		// board size
+		size = 0;
+		while (size <= 0 || size > 26) {
+			size = choose_board_size();
+		}
+
+		// board difficulty
+		int difficulty = 0;
+		while (difficulty <= 0 || difficulty > 3) {
+			difficulty = choose_board_difficulty(&size);
+		}
 
 		// create game
+		bombs = (size * difficulty);
 		board = create_board(&size, &bombs);
 		guesses = std::vector<std::vector<char>>(size, std::vector<char>(size, '?'));
 
 		// game logic
 		bool canPlay = true;
+		std::tuple<int, int> playerGuess;
 		while (canPlay && !check_has_won(&bombs, &guesses)) {
 			system("CLS");
 			print_header();
 			print_board(&size, &letters, &board, &guesses);
-			canPlay = guess(&letters, &board, &guesses);
+
+			playerGuess = std::make_tuple(-1, -1);
+			while (std::get<0>(playerGuess) < 0 || std::get<1>(playerGuess) < 0) {
+				playerGuess = guess(&size, &letters);
+			}
+
+			canPlay = check_guess(&std::get<0>(playerGuess), &std::get<1>(playerGuess), &board, &guesses);
 		}
 
 		// results

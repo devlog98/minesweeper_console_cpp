@@ -6,9 +6,9 @@
 
 #include <iostream>
 #include <array>
-#include <vector>
 #include <string>
+#include <tuple>
 
 namespace Minesweeper {
-	bool guess(const std::array<char, 26>* letters, const std::vector<std::vector<bool>>* board, std::vector<std::vector<char>>* guesses);
+	std::tuple<int, int> guess(const int* size, const std::array<char, 26>* letters);
 }

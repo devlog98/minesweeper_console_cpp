@@ -3,10 +3,9 @@
 */
 
 #include "guess.h"
-#include "check_guess.h"
 
 namespace Minesweeper {
-	bool guess(const std::array<char, 26>* letters, const std::vector<std::vector<bool>>* board, std::vector<std::vector<char>>* guesses) {
+	std::tuple<int, int> guess(const int* size, const std::array<char, 26>* letters) {
 		// input
 		std::cout << "Put your guess, first line then column: ";
 		std::string guess;
@@ -14,7 +13,7 @@ namespace Minesweeper {
 
 		// get line
 		int lineIndex = -1;
-		for (int i = 0; i < (*letters).size(); i++) {
+		for (int i = 0; i < (*size); i++) {
 			if (guess[0] == (*letters)[i]) {
 				lineIndex = i;
 				break;
@@ -23,14 +22,15 @@ namespace Minesweeper {
 
 		// get column
 		int columnIndex = -1;
-		for (int i = 0; i < (*letters).size(); i++) {
+		for (int i = 0; i < (*size); i++) {
 			if (guess[1] == (*letters)[i]) {
 				columnIndex = i;
 				break;
 			}
 		}
 
-		// check guess
-		return check_guess(&lineIndex, &columnIndex, &(*board), &(*guesses));
+		std::tuple<int, int> playerGuess;
+		playerGuess = std::make_tuple(lineIndex, columnIndex);
+		return playerGuess;
 	}
 }
